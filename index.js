@@ -6,9 +6,20 @@ const { Octokit } = require("@octokit/core");
 // https://github.com/octokit/core.js#readme
 const octokit = new Octokit({
     auth: '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'
-  })
+  });
   
-  const response = await octokit.request('GET /repos/{owner}/{repo}/issues', {
-    owner: 'juice-shop',
-    repo: 'juice-shop'
-  })
+
+
+
+
+  (async () => {
+    try {
+        const response = await octokit.request('GET /repos/{owner}/{repo}/issues', {
+            owner: 'juice-shop',
+            repo: 'juice-shop'
+          })
+        console.log(response)
+    } catch (error) {
+        core.setFailed(error.message);
+    }
+})();
