@@ -5,7 +5,7 @@ const { Octokit } = require("@octokit/core");
 // Octokit.js
 // https://github.com/octokit/core.js#readme
 const octokit = new Octokit({
-    auth: node.env.GITHUB_AUTH
+    auth: process.env.GITHUB_AUTH
   });
   
 
