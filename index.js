@@ -5,7 +5,7 @@ const { Octokit } = require("@octokit/core");
 // Octokit.js
 // https://github.com/octokit/core.js#readme
 const octokit = new Octokit({
-    auth: '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'
+    auth: node.env.GITHUB_AUTH
   });
   
 
@@ -17,9 +17,10 @@ const octokit = new Octokit({
         const response = await octokit.request('GET /repos/{owner}/{repo}/issues', {
             owner: 'juice-shop',
             repo: 'juice-shop'
-          })
+          });
+
         console.log(response)
     } catch (error) {
-        core.setFailed(error.message);
+        console.log('error  ==> ', error);
     }
 })();
