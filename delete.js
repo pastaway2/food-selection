@@ -5,7 +5,8 @@ const { Octokit } = require("@octokit/core");
 // Octokit.js
 // https://github.com/octokit/core.js#readme
 const octokit = new Octokit({
-    auth: "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"
+    auth: process.env.TOKEN
+    //auth: "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"
   });
 
   (async () => {

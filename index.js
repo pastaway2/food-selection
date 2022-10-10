@@ -1,12 +1,13 @@
-//const { Octokit } = require("@octokit/core");
-import { Octokit } from "octokit";
+const { Octokit } = require("@octokit/core");
+//import { Octokit } from "octokit";
 
 // Create a personal access token at https://github.com/settings/tokens/new?scopes=repo
 
 // Octokit.js
 // https://github.com/octokit/core.js#readme
 const octokit = new Octokit({
-    auth: process.env.GITHUB_AUTH
+  auth: process.env.TOKEN
+  //auth:'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'
   });
   
 

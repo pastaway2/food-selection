@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "module", 
+    "type": "git", 
     "url": "git+https://github.com/pastaway2/first-action.git"
   },
   "keywords": [],
