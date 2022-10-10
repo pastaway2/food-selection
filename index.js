@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-//const { Octokit } = require("@octokit/core");
+const { Octokit } = require("@octokit/core");
 //import { Octokit } from "octokit";
 
 // Create a personal access token at https://github.com/settings/tokens/new?scopes=repo
