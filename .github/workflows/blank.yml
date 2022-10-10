@@ -32,7 +32,9 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm install octokit
+        run:  npm install octokit
+              npm install @actions/core
+              npm install @actions/github
 
       # Runs a set of commands using the runners shell
       - name: Run script
