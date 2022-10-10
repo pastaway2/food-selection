@@ -1,4 +1,5 @@
 const { Octokit } = require("@octokit/core");
+import { Octokit } from "octokit"
 
 // Create a personal access token at https://github.com/settings/tokens/new?scopes=repo
 
