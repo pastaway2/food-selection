@@ -1,5 +1,11 @@
 name: "Check File Action"
 description: "My first action"
+
+inputs:
+  food_delete:
+    description: ‘Want to eat or reset the count’
+    required: true
+    default: 'food'
 runs:
   using: node12
   main: index.js
