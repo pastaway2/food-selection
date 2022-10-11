@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Random food selection
+name: Delete "eat this week" label from all issues
 
 # Controls when the workflow will run
 on:
