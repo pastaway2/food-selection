@@ -1,15 +1,9 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Random food selection
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -22,22 +16,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-      
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.15.0'
-          cache: npm
-
-      - name: Install dependencies
-        run:  npm install octokit
-              npm install @actions/core
-              npm install @actions/github
 
       # Runs a set of commands using the runners shell
-      - name: Run script
+      - name: Get the recipe from recipe book
         env:
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TOKEN: ${{ secrets.TOKEN}}
         uses: pastaway2/first-action@main
