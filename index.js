@@ -59,6 +59,16 @@ if (key == 'food') {
         ]
       })
 
+      await octokit.request('POST /repos/{owner}/{repo}/issues/{issue_number}/assignees', {
+        owner: 'pastaway2',
+        repo: 'try-action',
+        issue_number: selected.number,
+        assignees: [
+          'pastaway2',
+          'jb7045955'
+        ]
+      })
+
     } catch (error) {
       console.log('error  ==> ', error);
     }
