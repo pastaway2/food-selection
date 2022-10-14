@@ -22,5 +22,3 @@ jobs:
         env:
           TOKEN: ${{ secrets.TOKEN}}
         uses: pastaway2/first-action@main
-        with:
-          food_delete: 'food'
