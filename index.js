@@ -99,7 +99,7 @@ if (key == 'food') {
       let hasAssignee = false
 
       for (let hasAssignee of issue.assignee) {
-        if (assignee.login == 'pastaway2') haslabel = true
+        if (assignee.login == 'pastaway2') hasAssignee = true
       }
       return !hasAssignee
     })
