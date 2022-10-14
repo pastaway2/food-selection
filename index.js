@@ -81,5 +81,22 @@ if (key == 'food') {
       repo: 'try-action',
       name: 'eat this week'
     })
+
+    const response = await octokit.request('GET /repos/{owner}/{repo}/issues', {
+      owner: 'pastaway2',
+      repo: 'try-action'
+    });
+
+
+    const issues = response.data.map(r => {
+      await octokit.request('DELETE /repos/{owner}/{repo}/issues/{issue_number}/assignees', {
+        owner: 'pastaway2',
+        repo: 'try-action',
+        issue_number: r.issue_number,
+        assignees: [
+          'pastaway2'
+        ]
+      })
+    })
   })();
 }
