@@ -89,7 +89,7 @@ if (key == 'food') {
 
 
     const issues = response.data.map(r => {
-      await octokit.request('DELETE /repos/{owner}/{repo}/issues/{issue_number}/assignees', {
+      octokit.request('DELETE /repos/{owner}/{repo}/issues/{issue_number}/assignees', {
         owner: 'pastaway2',
         repo: 'try-action',
         issue_number: r.issue_number,
