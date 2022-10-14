@@ -92,7 +92,7 @@ if (key == 'food') {
       octokit.request('DELETE /repos/{owner}/{repo}/issues/{issue_number}/assignees', {
         owner: 'pastaway2',
         repo: 'try-action',
-        issue_number: r.issue_number,
+        issue_number: r.number,
         assignees: [
           'pastaway2'
         ]
