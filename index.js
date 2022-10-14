@@ -64,8 +64,7 @@ if (key == 'food') {
         repo: 'try-action',
         issue_number: selected.number,
         assignees: [
-          'pastaway2',
-          'jb7045955'
+          'pastaway2'
         ]
       })
 
@@ -89,14 +88,24 @@ if (key == 'food') {
 
 
     const issues = response.data.map(r => {
-      octokit.request('DELETE /repos/{owner}/{repo}/issues/{issue_number}/assignees', {
-        owner: 'pastaway2',
-        repo: 'try-action',
-        issue_number: r.number,
-        assignees: [
-          'pastaway2'
-        ]
-      })
+      return {
+        number: r.number,
+        title: r.title,
+        labels: r.labels.map(l => { return { name: l.name } })
+      }
     })
+
+    const filterissues = issues.filter(issue => {
+      let hasAssignee = false
+
+      for (let hasAssignee of issue.assignee) {
+        if (assignee.login == 'pastaway2') haslabel = true
+      }
+      return !hasAssignee
+    })
+
+    console.log('Repo issues ==> ', filterissues)
+
+
   })();
 }
