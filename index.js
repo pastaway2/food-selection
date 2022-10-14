@@ -64,8 +64,7 @@ if (key == 'food') {
         repo: 'try-action',
         issue_number: selected.number,
         assignees: [
-          'pastaway2',
-          'jb7045955'
+          'pastaway2'
         ]
       })
 
