@@ -56,7 +56,7 @@ if (key == 'food') {
         repo: 'try-action',
         issue_number: selected.number,
         labels: [
-          'eat this week',
+          'eaten',
         ]
       })
 
