@@ -78,7 +78,7 @@ if (key == 'food') {
     octokit.request('DELETE /repos/{owner}/{repo}/labels/{name}', {
       owner: 'pastaway2',
       repo: 'try-action',
-      name: 'eat this week'
+      name: 'eaten'
     })
 
     const response = await octokit.request('GET /repos/{owner}/{repo}/issues', {
