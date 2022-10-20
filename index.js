@@ -40,12 +40,12 @@ if (key == 'food') {
         return !haslabel
       })
 
-      console.log('Repo issues ==> ', filterissues)
+      console.log('Filtered issues ==> ', filterissues)
 
  //Randomly select issue from the filter issue
       const random = Math.floor(Math.random() * filterissues.length);
       const selected = filterissues[random]
-      console.log('This week I eat ==> ', selected)
+      console.log('Tonights I will eat (Not From UberEat) ==> ', selected)
 
       if (selected == undefined)
         return false
