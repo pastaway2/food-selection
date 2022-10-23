@@ -18,7 +18,7 @@ if (key == 'food') {
  //Get all issues in a single repo
       const response = await octokit.request('GET /repos/{owner}/{repo}/issues', {
         owner: 'pastaway2',
-        repo: 'try-action'
+        repo: 'recipe-book'
       });
 
 //Show in the log what are the issue from the repo
@@ -53,7 +53,7 @@ if (key == 'food') {
  //Update the selected issue to create label
       await octokit.request('POST /repos/{owner}/{repo}/issues/{issue_number}/labels', {
         owner: 'pastaway2',
-        repo: 'try-action',
+        repo: 'recipe-book',
         issue_number: selected.number,
         labels: [
           'eaten',
@@ -63,7 +63,7 @@ if (key == 'food') {
  //Assign the issue to pastaway2
       await octokit.request('POST /repos/{owner}/{repo}/issues/{issue_number}/assignees', {
         owner: 'pastaway2',
-        repo: 'try-action',
+        repo: 'recipe-book',
         issue_number: selected.number,
         assignees: [
           'pastaway2'
@@ -81,20 +81,20 @@ if (key == 'food') {
 //Delete the "eaten" label
     octokit.request('DELETE /repos/{owner}/{repo}/labels/{name}', {
       owner: 'pastaway2',
-      repo: 'try-action',
+      repo: 'recipe-book',
       name: 'eaten'
     })
 
     const response = await octokit.request('GET /repos/{owner}/{repo}/issues', {
       owner: 'pastaway2',
-      repo: 'try-action'
+      repo: 'recipe-book'
     });
 
 //Remove the assignee
     const issues = response.data.map(r => {
       octokit.request('DELETE /repos/{owner}/{repo}/issues/{issue_number}/assignees', {
         owner: 'pastaway2',
-        repo: 'try-action',
+        repo: 'recipe-book',
         issue_number: r.number,
         assignees: [
           'pastaway2'
