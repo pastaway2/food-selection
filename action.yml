@@ -1,5 +1,5 @@
-name: "Check File Action"
-description: "My first action"
+name: "What's for dinner?"
+description: "Select a random GitHub Issue which can be a recipe inside of repo."
 
 inputs:
   food_delete:
