@@ -1,4 +1,4 @@
-name: "What's for dinner?"
+name: "What's for dinner? - Random food (GitHub Issue) selection"
 description: "Select a random GitHub Issue which can be a recipe inside of repo."
 
 inputs:
